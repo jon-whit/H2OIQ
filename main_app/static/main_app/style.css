@@ -1,0 +1,23 @@
+/* From http://getbootstrap.com/components/#navbar */
+body { padding-top: 70px; }
+
+.home-page-icon{
+    border-radius: 100%;
+    font-size:3em;
+}
+
+.center {
+    text-align:middle;
+}
+
+.left {
+    text-align:left
+}
+
+.right {
+    text-align:right
+}
+
+.home-page-boxes-row div div div{
+    text-align:center;
+}
