@@ -58,8 +58,8 @@
                     <a class="list-group-item">LAT: {{station.latitude}}</a>
                     <a class="list-group-item">LONG: {{station.longitude}}</a>
 
-                    <div class="list-group-item"><a class="btn btn-success" href="#">Start</a></div>
-                    <div class="list-group-item"><a class="btn btn-danger" href="#">Stop</a></div>
+                    <div class="list-group-item"><a class="btn btn-success" href="{% url 'main_app:start_station' station.station_id %}">Start</a></div>
+                    <div class="list-group-item"><a class="btn btn-danger" href="{% url 'main_app:stop_station' station.station_id %}">Stop</a></div>
                     <div class="list-group-item"><a class="btn btn-default"
                                                     href="{% url 'main_app:monitor_detail' station.station_id %}">Monitor</a>
                     </div>

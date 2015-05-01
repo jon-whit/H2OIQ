@@ -24,7 +24,6 @@ class StationsListView(generic.ListView):
     def get_queryset(self):
         return WateringStation.objects.all()
 
-
 # Old Code, I'm using the generic ListView up above, so if we
 # end up not using this, delete it
 '''
@@ -38,6 +37,20 @@ def stations(request):
 
 def station_detail(request, station_id):
     return HttpResponse("Hello, world. You're at the H20IQ station_detail.")
+
+
+def start_station(request, station_id):
+    # start the watering process at the supplied station
+    station = WateringStation.objects.get(pk=station_id)
+    station.start_watering()
+    return HttpResponse("Starting to water...")
+
+
+def stop_station(request, station_id):
+    # start the watering process at the supplied station
+    station = WateringStation.objects.get(pk=station_id)
+    station.stop_watering()
+    return HttpResponse("Stopping water...")
 
 
 def settings(request):

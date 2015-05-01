@@ -6,7 +6,7 @@ class WateringStation(models.Model):
     """
 
     # the unique station ID of this station
-    station_id = models.BigIntegerField(primary_key=True, unique=True)
+    station_id = models.IntegerField(primary_key=True, unique=True)
 
     # optional latitudinal and longitudinal coordinates of this station
     latitude = models.FloatField(blank=True, null=True)
@@ -19,13 +19,13 @@ class WateringStation(models.Model):
         """
         Starts the watering process at this station.
         """
-        print ("Starting to water...")
+        print ("Station '%d': Starting to water...") % self.station_id
 
     def stop_watering(self):
         """
         Stops the watering process at this station.
         """
-        print ("Stopping the water...")
+        print ("Station '%d': Stopping the water...") % self.station_id
 
     def read_moisture(self):
         """
@@ -33,7 +33,7 @@ class WateringStation(models.Model):
 
         :return:
         """
-        print ("Reading soil moisture level...")
+        print ("Station '%d': Reading soil moisture level...") % self.station_id
 
     def get_status(self):
         """
@@ -41,7 +41,7 @@ class WateringStation(models.Model):
 
         :return:
         """
-        print ("Getting status...")
+        print ("Station '%d':Getting status...") % self.station_id
 
     def get_mode(self):
         """
@@ -49,10 +49,10 @@ class WateringStation(models.Model):
 
         :return:
         """
-        print ("Getting mode...")
+        print ("Station '%d': Getting mode...") % self.station_id
 
     def reset_station(self):
         """
         Resets this station by sending a command to cycle the power.
         """
-        print ("Resetting station...")
+        print ("Station '%d': Resetting station...") % self.station_id

@@ -7,7 +7,8 @@
 #ifndef STATION_H
 #define STATION_H
 
-#include <XBee.h>
+#include "Arduino.h"
+#include "XBee.h"
 
 class station {
 
@@ -18,7 +19,7 @@ private:
   int _battery_life;
 
   // private member functions
-  void actuate_servo();
+  void actuate_servo(bool);
 
 public:
 
@@ -32,6 +33,13 @@ public:
   void stop_watering();
   int read_moitsure();
 
+  // relational operators
+  inline bool operator< (const station& lhs, const station& rhs){ return lhs._station_id < rhs._station_id;}
+  inline bool operator> (const station& lhs, const station& rhs){return rhs < lhs;}
+  inline bool operator<=(const station& lhs, const station& rhs){return !(lhs > rhs);}
+  inline bool operator>=(const station& lhs, const station& rhs){return !(lhs < rhs);}
+  inline bool operator==(const X& lhs, const X& rhs){ return lhs._station_id == rhs._station_id; }
+  inline bool operator!=(const X& lhs, const X& rhs){return !(lhs == rhs);}
 
 };
 
