@@ -159,3 +159,6 @@ tramp
 Session.vim
 .netrwhist
 *~
+
+### SqLite Database ###
+db.sqlite3
