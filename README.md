@@ -18,6 +18,7 @@ Actual Installation:
 * Install Python 3.x.x
 * Install virtualenv and virtualenvwrapper
 * In a terminal window:
+
     ```sh
     $ cd root/for/H2OIQ
     $ git clone (repo address)
