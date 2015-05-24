@@ -1,4 +1,4 @@
-# H20IQ
+# H2OIQ
 
 ### Version
 1.0.0
@@ -24,9 +24,11 @@ Actual Installation:
     $ git clone (repo address)
     $ mkvirtualenv H2OIQ
     $ workon H2OIQ
-    $ cd H20IQ
-    $ pip install -r Environment_Requirements.txt
-    $ H20IQ> python manage.py migrate
-    $ H20IQ> python manage.py createsuperuser
+    $ cd H2OIQ
+    $ H2OIQ> pip install django 
+    $ H2OIQ> python manage.py migrate
+    $ H2OIQ> python manage.py createsuperuser
     ```
 * Follow the prompts
+
+
