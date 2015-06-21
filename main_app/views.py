@@ -2,6 +2,7 @@ import datetime
 
 from django.http import HttpResponse
 from django.views import generic
+from django.shortcuts import render_to_response
 
 from main_app.models import WateringStation
 
@@ -15,7 +16,7 @@ def schedule(request):
 
 
 def monitor(request):
-    return HttpResponse("Hello, world. You're at the H20IQ monitor.")
+    return render_to_response('main_app/monitor.html')
 
 
 class StationsListView(generic.ListView):
@@ -24,15 +25,9 @@ class StationsListView(generic.ListView):
     def get_queryset(self):
         return WateringStation.objects.all()
 
-# Old Code, I'm using the generic ListView up above, so if we
-# end up not using this, delete it
-'''
-def stations(request):
-    watering_stations = WateringStation.objects.all()
-    template = loader.get_template("main_app/stations.html")
-    context = RequestContext(request, {"watering_stations": watering_stations, })
-    return HttpResponse(template.render(context))
-'''
+
+class SettingsView(generic.View):
+    template_name = "main_app/settings.html"
 
 
 def station_detail(request, station_id):
